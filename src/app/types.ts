@@ -21,7 +21,7 @@ export type QueueEntry = {
   notes: string;
 };
 
-type UserRole = {
+export type UserRole = {
   userId: string;           // uuid → auth.users(id)
   role: 'receptionist' | 'doctor';
 };
