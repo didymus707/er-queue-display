@@ -10,18 +10,18 @@ export type Patient = {
 export type QueueEntry = {
   id: string;
   patientId: string;
-  inititals: string;
+  initials: string;
   queueNumber: number;
   status: PatientStatus;
   room: string | null;
   checkedInAt: string;
   reasonForVisit: string;
-  seenByDoctor: string;
-  dignosis: string;
-  notes: string;
+  seenByDoctor: string | null;
+  diagnosis: string | null;
+  notes: string | null;
 };
 
 export type UserRole = {
-  userId: string;           // uuid → auth.users(id)
+  userId: string;
   role: 'receptionist' | 'doctor';
 };
