@@ -12,4 +12,4 @@ $$;
 GRANT USAGE ON SCHEMA private TO authenticated;
 GRANT EXECUTE ON FUNCTION private.get_my_role() TO authenticated;
 
-DROP FUNCTION IF EXISTS public.get_my_role();
+DROP FUNCTION IF EXISTS public.get_my_role() CASCADE;
