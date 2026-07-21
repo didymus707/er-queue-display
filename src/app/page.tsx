@@ -1,5 +1,29 @@
-export default function Home() {
+import { createClient } from "@/lib/supabase/server";
+import QueueDisplay from "./components/queueDisplay";
+
+export default async function Home() {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("queue_entries")
+    .select("id, initials, queue_number, room, status")
+    .neq("status", "done")
+    .order("checked_in_at", { ascending: true });
+
+  console.log(error);
+  
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black"></div>
+    <>
+      <main>
+        {data ? (
+          <>
+            <QueueDisplay queueEntries={data} />
+          </>
+        ) : (
+          <>
+            <p>No queue entry is available</p>
+          </>
+        )}
+      </main>
+    </>
   );
 }

@@ -11,7 +11,7 @@ export type QueueEntry = {
   id: string;
   patientId: string;
   initials: string;
-  queueNumber: number;
+  queue_number: number;
   status: PatientStatus;
   room: string | null;
   checkedInAt: string;
