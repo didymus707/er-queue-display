@@ -10,13 +10,13 @@ export default async function Home() {
     .order("checked_in_at", { ascending: true });
 
   console.log(error);
-  
+
   return (
     <>
       <main>
         {data ? (
           <>
-            <QueueDisplay queueEntries={data} />
+            <QueueDisplay initialQueueEntries={data} />
           </>
         ) : (
           <>
