@@ -3,8 +3,8 @@ export type PatientStatus = "waiting" | "called" | "recalled" | "done";
 export type Patient = {
   id: string;
   name: string;
-  age: number;
-  createdAt: string; 
+  dateOfBirth: string;
+  createdAt: string;
 };
 
 export type QueueEntry = {
@@ -23,5 +23,5 @@ export type QueueEntry = {
 
 export type UserRole = {
   userId: string;
-  role: 'receptionist' | 'doctor';
+  role: "receptionist" | "doctor";
 };
