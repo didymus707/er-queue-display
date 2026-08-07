@@ -1,0 +1,1 @@
+alter table patients drop column age, add column date_of_birth date not null;
