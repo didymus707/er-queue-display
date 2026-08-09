@@ -1,0 +1,1 @@
+alter table daily_counters rename column next_number to last_number;
